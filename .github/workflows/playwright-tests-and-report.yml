@@ -7,16 +7,10 @@ on:
     branches: [main]
 
 permissions:
-  contents: write
+  contents: write # Needed for GitHub Pages deployment
 
 jobs:
   test:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Setup Node.js
     runs-on: ubuntu-latest
 
     steps:
