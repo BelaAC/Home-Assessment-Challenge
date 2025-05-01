@@ -29,11 +29,13 @@ jobs:
         run: npx playwright test --project=ui
         env:
           CI: true
+          SHOPIFY_PASSWORD: ${{ secrets.SHOPIFY_PASSWORD }}
 
       - name: Run API Tests
         run: npx playwright test --project=api
         env:
           CI: true
+          SHOPIFY_PASSWORD: ${{ secrets.SHOPIFY_PASSWORD }}
 
       - name: Upload test results
         uses: actions/upload-artifact@v3

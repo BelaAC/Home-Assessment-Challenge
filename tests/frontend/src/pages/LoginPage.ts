@@ -27,7 +27,9 @@ export class LoginPage {
     await this.enterUsingPasswordButton.waitFor({ state: "visible" });
     await this.enterUsingPasswordButton.click();
     await this.passwordInput.waitFor({ state: "visible" });
-    await this.passwordInput.fill(config.password);
+    await this.passwordInput.fill(
+      process.env.SHOPIFY_PASSWORD || config.password
+    );
     await this.loginButton.waitFor({ state: "visible" });
     await this.loginButton.click();
   }
