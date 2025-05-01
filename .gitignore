@@ -31,6 +31,9 @@ Thumbs.db
 
 # Testing
 /coverage
+/playwright-report/
+/test-results/
+auth.json
 
 # Misc
 .cache/
