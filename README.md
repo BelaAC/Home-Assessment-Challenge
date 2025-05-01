@@ -18,6 +18,8 @@ This repository contains the QA Automation Engineer Lead - Take Home Challenge, 
 - Node.js (v18 or higher)
 - npm (v8 or higher)
 - Git
+- .env file with the following variables:
+  - SHOPIFY_PASSWORD (password for the monkey-bakery)
 
 ## Installation
 
