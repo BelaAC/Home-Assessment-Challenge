@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: write
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -37,10 +40,25 @@ jobs:
           CI: true
           SHOPIFY_PASSWORD: ${{ secrets.SHOPIFY_PASSWORD }}
 
-      - name: Upload test results
+      - name: Upload test results as artifact
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
+
+      - name: Deploy HTML report to GitHub Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./playwright-report
+          publish_branch: gh-pages
+          force_orphan: true
+
+      - name: Add summary to GitHub Actions
+        if: always()
+        run: |
+          echo "Playwright Tests Completed" >> $GITHUB_STEP_SUMMARY
+          echo "[View the report on GitHub Pages](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/)" >> $GITHUB_STEP_SUMMARY
