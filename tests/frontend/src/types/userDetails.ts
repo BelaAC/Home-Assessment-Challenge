@@ -1,3 +1,6 @@
+/**
+ * Interface representing user details
+ */
 export interface userDetails {
   firstName: string;
   lastName: string;

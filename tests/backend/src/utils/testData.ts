@@ -26,13 +26,13 @@ export const knownMoves = [
  * List of known locations
  * @type {Array}
  */
-export const knownLocations = ["canalave-city", "sinnoh-region"];
+export const knownLocations = ["canalave-city", "black-city"];
 
 /**
  * List of known contest types
  * @type {Array}
  */
-export const knownContestTypes = ["cool", "beauty", "cute", "clever", "tough"];
+export const knownContestTypes = ["cool", "beauty", "cute", "smart", "tough"];
 
 /**
  * Expected response structure for move data

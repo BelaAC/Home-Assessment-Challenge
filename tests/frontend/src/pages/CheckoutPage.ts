@@ -34,6 +34,7 @@ export class CheckoutPage {
   // Shipping method
   private readonly shippingPrice: Locator;
   private readonly shippingMethod: Locator;
+
   // Payment information - IFrames
   private readonly cardNumberIFrame: FrameLocator;
   private readonly cardExpirationDateIFrame: FrameLocator;
@@ -44,10 +45,6 @@ export class CheckoutPage {
   private readonly cardNumberInput: Locator;
   private readonly cardExpirationDateInput: Locator;
   private readonly cardCvvInput: Locator;
-  private readonly cardHolderNameInput: Locator;
-
-  // Payment method selector
-  private readonly paymentMethodSelect: Locator;
 
   // Order summary section
   private readonly orderTitle: Locator;
@@ -119,12 +116,6 @@ export class CheckoutPage {
     this.cardCvvInput = this.cardCvvIFrame.locator(
       "[placeholder='Security code']"
     );
-    this.cardHolderNameInput = this.cardHolderNameIFrame.locator(
-      "[placeholder='Name on card']"
-    );
-
-    // Initialize Payment method selector
-    this.paymentMethodSelect = this.page.locator("#payment_methods label");
 
     // Initialize Order summary section
     this.orderTitle = this.page.locator("[scrollbehaviour='chain'] p");
