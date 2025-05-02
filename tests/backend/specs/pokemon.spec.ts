@@ -3,7 +3,7 @@ import { expectedStructure } from "../src/utils/testData";
 import { getPokemon, getRandomPokemon } from "../src/utils/pokeapi";
 
 test.describe("/pokemon Endpoint Scenarios", () => {
-  test("Should return valid structure for a known Pokémon @api @pokemon", async ({
+  test("[TC-009] Should return valid structure for a known Pokémon @api @pokemon", async ({
     request,
   }) => {
     // Get a random Pokémon name from the list of known Pokémon
@@ -72,7 +72,7 @@ test.describe("/pokemon Endpoint Scenarios", () => {
     console.log("Successfully validated the structure of the Pokémon data");
   });
 
-  test("Should return a 404 error for a non-existent Pokémon @api @pokemon", async ({
+  test("[TC-010] Should handle non-existent Pokémon @api @pokemon", async ({
     request,
   }) => {
     const nonExistentPokemon = "non-existent-pokemon";

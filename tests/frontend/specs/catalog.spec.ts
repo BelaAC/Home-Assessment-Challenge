@@ -13,7 +13,7 @@ test.describe("Catalog Scenarios", () => {
     page = await context.newPage();
   });
 
-  test("Should successfully validate catalog page @ui @catalog", async () => {
+  test("[TC-005] Should successfully validate catalog page @ui @catalog", async () => {
     const homePage = new HomePage(page);
     const catalogPage = new CatalogPage(page);
     await homePage.open();

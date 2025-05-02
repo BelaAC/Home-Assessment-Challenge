@@ -3,7 +3,7 @@ import { expectedMoveStructure } from "../src/utils/testData";
 import { getRandomMove, getMove } from "../src/utils/pokeapi";
 
 test.describe("/moves Endpoint Scenarios", () => {
-  test("Should return valid structure for a known move @api @moves", async ({
+  test("[TC-008] Should return valid structure for a known move @api @moves", async ({
     request,
   }) => {
     const moveName = getRandomMove();

@@ -57,3 +57,11 @@ export const catalogPage = {
   filterFilter: "Filter:",
   sortBy: "Sort by:",
 };
+
+/**
+ * Constants for cart page
+ */
+export const cartPage = {
+  emptyStateTitle: "Your cart is empty",
+  continueShoppingButton: "Continue shopping",
+};
