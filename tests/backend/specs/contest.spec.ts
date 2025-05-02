@@ -3,7 +3,7 @@ import { getContestType, getRandomContestType } from "../src/utils/pokeapi";
 import { expectedContestTypeStructure } from "../src/utils/testData";
 
 test.describe("Contest Type API Tests", () => {
-  test("Should return valid contest type data for a random contest type @api @contest", async ({
+  test("[TC-006] Should return valid contest type data for a random contest type @api @contest", async ({
     request,
   }) => {
     const contestType = getRandomContestType();

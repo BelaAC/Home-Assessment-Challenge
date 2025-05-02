@@ -8,10 +8,19 @@ This repository contains the QA Automation Engineer Lead - Take Home Challenge, 
 ## Features
 
 - UI Automation Testing
+  - E-commerce purchase flows
+  - Cart management
+  - Catalog navigation
+  - Search functionality
 - API Testing
+  - Pokemon API endpoints
+  - Data structure validation
+  - Error handling
 - Automated CI/CD Pipeline
 - Comprehensive Test Reporting
 - Cross-browser Testing Support
+- Page Object Model implementation
+- Type-safe test data generation
 
 ## Prerequisites
 
@@ -40,6 +49,12 @@ npm install
 
 ```bash
 npx playwright install
+```
+
+4. Create a `.env` file in the root directory with your credentials:
+
+```bash
+SHOPIFY_PASSWORD=your_password_here
 ```
 
 ## Running Tests
@@ -102,14 +117,44 @@ npm run report
 
 ```
 ├── tests/
-│   ├── frontend/         # UI test specifications
-│   ├── backend/          # API test specifications
-│   └── utils/            # Shared test utilities
+│   ├── frontend/              # UI test specifications
+│   │   ├── specs/            # Test scenarios
+│   │   ├── src/
+│   │   │   ├── pages/        # Page Object Models
+│   │   │   ├── types/        # TypeScript type definitions
+│   │   │   └── utils/        # Test utilities
+│   │   └── auth.setup.ts     # Authentication setup
+│   ├── backend/              # API test specifications
+│   │   ├── specs/            # API test scenarios
+│   │   └── src/
+│   │       └── utils/        # API test utilities
+│   └── utils/                # Shared test utilities
+├── docs/
+│   └── test-cases/           # Test case documentation
+│       ├── frontend/         # UI test cases
+│       └── backend/          # API test cases
 ├── .github/
-│   └── workflows/        # CI/CD configuration
-├── playwright.config.ts  # Playwright configuration
-└── package.json         # Project dependencies and scripts
+│   └── workflows/            # CI/CD configuration
+├── playwright.config.ts      # Playwright configuration
+└── package.json             # Project dependencies and scripts
 ```
+
+## Test Cases
+
+### Frontend Tests
+
+- TC-001: Should successfully buy featured product
+- TC-002: Should unsuccessfully buy product
+- TC-003: Should successfully add product to cart via search
+- TC-004: Should successfully edit cart
+- TC-005: Should successfully validate catalog page
+
+### Backend Tests
+
+- TC-006: Should return valid contest type data
+- TC-007: Should return valid location data
+- TC-008: Should return valid move data
+- TC-009: Should return valid Pokemon data
 
 ## CI/CD Pipeline
 
@@ -119,6 +164,7 @@ The project uses GitHub Actions for continuous integration. The workflow:
 - Executes both UI and API tests
 - Generates and uploads test reports
 - Stores test results as artifacts
+- Deploys test reports to GitHub Pages
 
 ## Test Reports
 
@@ -136,4 +182,4 @@ Reports are available:
 
 ## Notes
 
-Hope you guys like it! :)
+Hope you guys like it, Bela! :)

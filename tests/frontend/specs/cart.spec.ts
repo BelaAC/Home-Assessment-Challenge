@@ -17,7 +17,7 @@ test.describe("Cart Scenarios", () => {
     page = await context.newPage();
   });
 
-  test("Should successfully add product to cart via search @ui @cart", async () => {
+  test("[TC-003] Should successfully add product to cart via search @ui @cart", async () => {
     const homePage = new HomePage(page);
     const searchPage = new SearchPage(page);
     const productPage = new ProductPage(page);
@@ -31,7 +31,7 @@ test.describe("Cart Scenarios", () => {
     await productPage.addProductToCart(selectedProduct);
   });
 
-  test("Should successfully edit cart @ui @cart", async () => {
+  test("[TC-004] Should successfully edit cart @ui @cart", async () => {
     const homePage = new HomePage(page);
     const productPage = new ProductPage(page);
     const cartPage = new CartPage(page);

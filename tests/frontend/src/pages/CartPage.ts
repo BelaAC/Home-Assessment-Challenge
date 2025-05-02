@@ -1,6 +1,6 @@
 import { Page, expect, Locator } from "@playwright/test";
 import { productDetails } from "../types/productDetails";
-import { pageTitles } from "../utils/constants";
+import { pageTitles, cartPage } from "../utils/constants";
 
 export class CartPage {
   private readonly page: Page;
@@ -12,10 +12,14 @@ export class CartPage {
   private readonly cartQuantity: Locator;
   private readonly cartQuantityPlus: Locator;
   private readonly cartQuantityMinus: Locator;
+  private readonly cartRemove: Locator;
 
   // Checkout button
   private readonly checkoutButton: Locator;
 
+  // Empty State
+  private readonly emptyStateTitle: Locator;
+  private readonly continueShoppingButton: Locator;
   /**
    * Constructor for the CartPage class
    * @param page - The page object
@@ -32,9 +36,16 @@ export class CartPage {
     this.cartQuantity = this.page.locator("input.quantity__input");
     this.cartQuantityPlus = this.page.locator("[name='plus']");
     this.cartQuantityMinus = this.page.locator("[name='minus']");
+    this.cartRemove = this.page.locator("cart-remove-button");
 
     // Checkout button
     this.checkoutButton = this.page.locator("#checkout[form='cart']");
+
+    // Empty State
+    this.emptyStateTitle = this.page.locator(".cart__empty-text");
+    this.continueShoppingButton = this.page.locator(
+      ".cart__warnings a[class='button']"
+    );
   }
 
   /**
@@ -142,6 +153,10 @@ export class CartPage {
     await this.addProductQuantity(productDetails, 1);
     // Remove one product quantity from the cart
     await this.removeProductQuantity(productDetails, 1);
+    // Remove the product from the cart
+    await this.removeFirstProduct();
+    // Verify the cart is empty
+    await this.validateCartIsEmpty();
   }
 
   /**
@@ -219,5 +234,30 @@ export class CartPage {
         2
       )}`
     );
+  }
+
+  /**
+   * Removes a product from the cart
+   * @param productDetails - The product details
+   */
+  async removeFirstProduct() {
+    await this.cartRemove.first().click();
+  }
+
+  /**
+   * Validates the cart is empty
+   */
+  async validateCartIsEmpty() {
+    await expect(this.emptyStateTitle).toBeVisible();
+    await expect(this.emptyStateTitle).toHaveText(cartPage.emptyStateTitle);
+    await expect(this.continueShoppingButton).toBeVisible();
+    expect(await this.continueShoppingButton.getAttribute("href")).toBe(
+      "/collections/all"
+    );
+    await expect(this.continueShoppingButton).toHaveText(
+      cartPage.continueShoppingButton
+    );
+
+    console.log("Successfully validated cart is empty");
   }
 }

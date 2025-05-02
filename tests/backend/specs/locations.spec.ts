@@ -3,7 +3,7 @@ import { getLocation, getRandomLocation } from "../src/utils/pokeapi";
 import { expectedLocationStructure } from "../src/utils/testData";
 
 test.describe("/location Endpoint Scenarios", () => {
-  test("Should return a valid location for a given ID or name @api @location", async ({
+  test("[TC-007] Should return a valid location for a given ID or name @api @location", async ({
     request,
   }) => {
     const locationName = getRandomLocation();

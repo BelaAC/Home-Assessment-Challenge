@@ -13,7 +13,7 @@ test.describe("Buy Product Scenarios", () => {
     page = await context.newPage();
   });
 
-  test("Should successfully buy featured product @ui @product", async () => {
+  test("[TC-001] Should successfully buy featured product @ui @product", async () => {
     const homePage = new HomePage(page);
     const checkoutPage = new CheckoutPage(page);
     await homePage.open();
@@ -29,7 +29,7 @@ test.describe("Buy Product Scenarios", () => {
     );
   });
 
-  test("Should unsuccessfully buy product @ui @product", async () => {
+  test("[TC-002] Should unsuccessfully buy product @ui @product", async () => {
     const homePage = new HomePage(page);
     const checkoutPage = new CheckoutPage(page);
     await homePage.open();
