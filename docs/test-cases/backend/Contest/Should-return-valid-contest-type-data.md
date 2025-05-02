@@ -12,30 +12,35 @@
 **Test Steps**:
 
 1. Get a random contest type
-   1.1 Random contest type is selected
+
+   1. Random contest type is selected
 
 2. Make API request to get contest type data
-   2.1 API request is successful
-   2.2 Response status code is 200
+
+   1. API request is successful
+   2. Response status code is 200
 
 3. Validate basic properties
-   3.1 All required basic properties are present
-   3.2 Property types match expected structure
+
+   1. All required basic properties are present
+   2. Property types match expected structure
 
 4. Validate berry flavor structure
-   4.1 Berry flavor object has required properties
-   4.2 Name property is of correct type
-   4.3 URL property is of correct type
-   4.4 URL follows expected format
+
+   1. Berry flavor object has required properties
+   2. Name property is of correct type
+   3. URL property is of correct type
+   4. URL follows expected format
 
 5. Validate names array structure
-   5.1 Names array exists
-   5.2 Each name entry has required properties
-   5.3 Name property is of correct type
-   5.4 Color property is of correct type
-   5.5 Language object has required properties
-   5.6 Language name property is of correct type
-   5.7 Language URL property is of correct type
+
+   1. Names array exists
+   2. Each name entry has required properties
+   3. Name property is of correct type
+   4. Color property is of correct type
+   5. Language object has required properties
+   6. Language name property is of correct type
+   7. Language URL property is of correct type
 
 **Expected Results**:
 

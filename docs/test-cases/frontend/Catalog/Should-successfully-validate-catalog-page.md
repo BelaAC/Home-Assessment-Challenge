@@ -13,25 +13,29 @@
 **Test Steps**:
 
 1. Initialize page objects
-   1.1 HomePage object is created
-   1.2 CatalogPage object is created
+
+   1. HomePage object is created
+   2. CatalogPage object is created
 
 2. Navigate to the home page
-   2.1 Home page is opened
-   2.2 Home page is visible
+
+   1. Home page is opened
+   2. Home page is visible
 
 3. Navigate to catalog page
-   3.1 Header menu is visible
-   3.2 Catalog option is selected from header menu
-   3.3 Catalog page is loaded
+
+   1. Header menu is visible
+   2. Catalog option is selected from header menu
+   3. Catalog page is loaded
 
 4. Validate catalog page elements
-   4.1 Page title matches expected value
-   4.2 Collection title is visible and correct
-   4.3 Filter section is visible and functional
-   4.4 Sort by dropdown is visible and functional
-   4.5 Product grid is visible
-   4.6 Product count is displayed correctly
+
+   1. Page title matches expected value
+   2. Collection title is visible and correct
+   3. Filter section is visible and functional
+   4. Sort by dropdown is visible and functional
+   5. Product grid is visible
+   6. Product count is displayed correctly
 
 **Expected Results**:
 

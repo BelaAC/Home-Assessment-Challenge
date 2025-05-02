@@ -14,32 +14,37 @@
 **Test Steps**:
 
 1. Initialize page objects
-   1.1 HomePage object is created
-   1.2 ProductPage object is created
-   1.3 CartPage object is created
+
+   1. HomePage object is created
+   2. ProductPage object is created
+   3. CartPage object is created
 
 2. Navigate to the home page
-   2.1 Home page is opened
-   2.2 Home page is visible
+
+   1. Home page is opened
+   2. Home page is visible
 
 3. Select an in-stock product
-   3.1 In-stock product is identified
-   3.2 Product is selected
-   3.3 Product details page is visible
+
+   1. In-stock product is identified
+   2. Product is selected
+   3. Product details page is visible
 
 4. Add product to cart
-   4.1 Add to cart action is performed
-   4.2 Cart popup is visible
-   4.3 Product is added to cart successfully
+
+   1. Add to cart action is performed
+   2. Cart popup is visible
+   3. Product is added to cart successfully
 
 5. Edit cart contents
-   5.1 Cart page is visible
-   5.2 Cart page title is correct
-   5.3 Product is visible in cart
-   5.4 Product quantity is updated
-   5.5 Product price is recalculated
-   5.6 Product is removed from cart
-   5.7 Cart empty message is visible
+
+   1. Cart page is visible
+   2. Cart page title is correct
+   3. Product is visible in cart
+   4. Product quantity is updated
+   5. Product price is recalculated
+   6. Product is removed from cart
+   7. Cart empty message is visible
 
 **Expected Results**:
 

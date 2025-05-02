@@ -11,11 +11,13 @@
 **Test Steps**:
 
 1. Prepare non-existent Pokemon name
-   1.1 Invalid Pokemon name is selected
+
+   1. Invalid Pokemon name is selected
 
 2. Make API request with invalid Pokemon name
-   2.1 API request is made
-   2.2 Response status code is 404
+
+   1. API request is made
+   2. Response status code is 404
 
 **Expected Results**:
 
